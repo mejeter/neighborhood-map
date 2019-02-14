@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit="no">
+    <title>Neighborhood Map</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar-brand">Fun Places in Chicago</div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Location list and search bar within toggled menu --> 
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <div class="list-group" data-bind="foreach: locationList">
+            <a href="#" class="list-group-item list-group-item-action" data-bind="text: title, click: show"></a>
+          </div>
+        </div>
+        <form class="form-inline my-2 my-lg-0" role="search">
+          <input class="form-control mr-sm-2" type="text" placeholder="Explore" name="q" data-bind="textInput: searchItem, valueUpdate: 'afterkeydown'">
+        </form>
+      </div>
+    </nav>
+
+    <main class="container-fluid">
+      <div class="row">
+        <div id="map"></div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container text-right">
+        <a href="https://developer.foursquare.com/" class="href" target="_blank">
+          <img class="foursquare-img" src="http://www.freeiconspng.com/uploads/foursquare-icon-22.png" alt="used with Foursquare" >
+        </a>
+        <a href="https://icons8.com/icon/13800/marker" class="footer-link">Marker icons by Icons8</a>
+      </div>
+    </footer>
+
+    <script src="js/lib/knockout.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?libraries=places,drawing,geometry&key=AIzaSyBrb641mWmz87sZjplZCDMorkjk_9VyVcg&callback=initMap" onerror="googleMapsError()">
+    </script>
+  </body>
+</html>
