@@ -24,5 +24,5 @@ The `main.js` file has the functionality for the map, as well as the map markers
 The Unlicense. This is public domain.
 
 #### Acknowledgements
-A Bootstrap boiler template was used.
+A Bootstrap boiler template was used.  
 Both the [marker](https://icons8.com/icon/13800/marker) and [place marker](https://icons8.com/icon/13778/place-marker) icons are from Icons8, which allows for free use.
